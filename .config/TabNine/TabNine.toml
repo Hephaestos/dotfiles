@@ -1,0 +1,3 @@
+[language.cpp]
+command = "/home/daniel/cquery/build/cquery"
+args = ["--init={\"cacheDirectory\": \"${project_root}/.cquery_cache\"}"]
