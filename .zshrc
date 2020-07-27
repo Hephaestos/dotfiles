@@ -126,8 +126,8 @@ export KEYTIMEOUT=1
 #. /home/daniel/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 #Other Aliases
-alias zshconfig="vi ~/.zshrc"
 alias hydra="ssh mfloyd12@hydra7.eecs.utk.edu"
+alias darklunch="ssh -i .ssh/digital_ocean.key daniel@darklunch.me"
 
 #add ~/bin to path
 export PATH=$PATH:$HOME/bin

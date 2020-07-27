@@ -1,4 +1,4 @@
-:syntax on
+syntax on
 
 set t_kb=
 set nocompatible
@@ -20,7 +20,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
-
 syntax enable
 set ruler
 set background=dark
@@ -42,7 +41,7 @@ set hlsearch
 
 let g:solarized_termcolors=256
 let g:rehash256 = 1
-:colorscheme molokai
+"colorscheme molokai
 
 set showtabline=2
 
@@ -64,15 +63,27 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'		"Syntax Highlighting
 Plug 'scrooloose/syntastic'		"Syntax Checker
 Plug 'Raimondi/delimitMate'		"Autoclose and indent
-Plug 'powerline/powerline'		"POWERLINE!
+"Plug 'powerline/powerline'		"POWERLINE!
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-surround'		"Adds actions for surrounding (s)
 Plug 'tpope/vim-commentary'		"Adds actions for commenting out lines (gc)
-Plug 'zxqfl/tabnine-vim'		"Deep Learning Autocompletion
 Plug 'scrooloose/nerdtree'		"File Tree
+Plug 'vimwiki/vimwiki'			"Vim Wiki
 Plug 'ryanoasis/vim-devicons'	"Icons
+Plug 'arcticicestudio/nord-vim'	"Icons
 
 call plug#end()
 
+colorscheme nord
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_theme = 'base16'
+	
 "For devicons
 set encoding=UTF-8
 
@@ -107,8 +118,8 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_balance_matchpairs = 1
 
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-set laststatus=2
+"set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"set laststatus=2
 
 "C-n opens nerdtree
 map <C-n> :NERDTreeToggle<CR>
