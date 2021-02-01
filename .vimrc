@@ -19,11 +19,11 @@ set vb
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 set smarttab
 syntax enable
 set ruler
 set background=dark
-
 
 set noshowmode	"Tell you if you are in insert mode
 
@@ -38,10 +38,6 @@ set scrolloff=5
 set wildmode=longest,list
 set incsearch
 set hlsearch
-
-let g:solarized_termcolors=256
-let g:rehash256 = 1
-"colorscheme molokai
 
 set showtabline=2
 
@@ -135,4 +131,3 @@ set foldlevel=2
 "Handy Things
 nnoremap <space> :nohlsearch<CR>
 nnoremap ; :
-nnoremap <F2> :set tabstop=2 <bar> set noexpandtab <bar> %retab! <bar> set tabstop=4<CR>
