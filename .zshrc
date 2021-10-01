@@ -76,7 +76,7 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
@@ -131,9 +131,6 @@ alias darklunch="ssh -i .ssh/digital_ocean.key daniel@darklunch.me"
 
 #add ~/bin to path
 export PATH=$PATH:$HOME/bin
-
-#Enable Syntax Highlighting
-source ~/.scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
