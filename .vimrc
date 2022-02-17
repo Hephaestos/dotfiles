@@ -67,11 +67,13 @@ Plug 'tpope/vim-commentary'		"Adds actions for commenting out lines (gc)
 Plug 'scrooloose/nerdtree'		"File Tree
 Plug 'vimwiki/vimwiki'			"Vim Wiki
 Plug 'ryanoasis/vim-devicons'	"Icons
-Plug 'arcticicestudio/nord-vim'	"Icons
+"Plug 'arcticicestudio/nord-vim'	"Icons
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
-colorscheme nord
+let ayucolor="mirage"
+colorscheme ayu
 
 " powerline symbols
 let g:airline_left_sep = ''
