@@ -72,6 +72,7 @@ Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
+set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
 
