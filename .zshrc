@@ -138,6 +138,10 @@ alias cl="clang -g -Wall"
 export PATH=$PATH:$HOME/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [ -f ~/.p10k.zsh ]; then
+    source ~/.p10k.zsh
+else
+    p10k configure
+fi
 
 cd ~
