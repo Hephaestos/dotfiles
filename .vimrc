@@ -42,9 +42,9 @@ set hlsearch
 set showtabline=2
 
 "Pro gamer line numbers
-set relativenumber
+"set relativenumber
 set number
-set cursorline
+"set cursorline
 
 "Fuzzy file search
 set path+=**
@@ -56,19 +56,25 @@ command! MakeTags !ctags -R .
 "vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'sheerun/vim-polyglot'		"Syntax Highlighting
-Plug 'scrooloose/syntastic'		"Syntax Checker
-Plug 'Raimondi/delimitMate'		"Autoclose and indent
-"Plug 'powerline/powerline'		"POWERLINE!
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-surround'		"Adds actions for surrounding (s)
-Plug 'tpope/vim-commentary'		"Adds actions for commenting out lines (gc)
-Plug 'scrooloose/nerdtree'		"File Tree
-Plug 'vimwiki/vimwiki'			"Vim Wiki
-Plug 'ryanoasis/vim-devicons'	"Icons
-"Plug 'arcticicestudio/nord-vim'	"Icons
-Plug 'ayu-theme/ayu-vim'
+Plug 'sheerun/vim-polyglot'		                                "Syntax Highlighting
+Plug 'scrooloose/syntastic'		                                "Syntax Checker
+Plug 'Raimondi/delimitMate'		                                "Autoclose and indent
+Plug 'vim-airline/vim-airline'                                  "Light as air statusline
+Plug 'vim-airline/vim-airline-themes'                           "Make it pretty
+Plug 'edkolev/tmuxline.vim'                                     "Let's get tmux looking nice too
+Plug 'airblade/vim-gitgutter'                                   "Git info
+Plug 'tpope/vim-fugitive'                                       "Git wrapper
+Plug 'junegunn/gv.vim'                                          "Git commit browser
+Plug 'tpope/vim-surround'		                                "Adds actions for surrounding (s)
+Plug 'tpope/vim-commentary'		                                "Adds actions for commenting out lines (gc)
+Plug 'preservim/nerdtree'	                                    "File Tree
+"Plug 'Xuyuanp/nerdtree-git-plugin'                             "Git indicators for nerdtree (Not working :/)
+Plug 'ryanoasis/vim-devicons'	                                "Icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                  "Pretty colors for nerdtree
+Plug 'scrooloose/nerdtree'		                                "File Tree
+Plug 'vimwiki/vimwiki'			                                "Vim Wiki
+Plug 'arcticicestudio/nord-vim'                                 "Nord theme
+Plug 'ayu-theme/ayu-vim'                                        "Ayu theme
 
 call plug#end()
 
@@ -81,7 +87,7 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_theme = 'base16'
+let g:airline_theme = 'ayu_mirage'
 	
 "For devicons
 set encoding=UTF-8
@@ -104,9 +110,9 @@ nnoremap <Down> :echo "ಠ_ಠ"<CR>
 nnoremap <C-q> :term<CR> 
 nnoremap <C-Q> :vert term<CR> 
 
-set statusline+=&#warningmsg#
-set statusline+=&{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=&#warningmsg#
+"set statusline+=&{SyntasticStatuslineFlag()}
+"set statusline+=%
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -124,6 +130,19 @@ let g:delimitMate_balance_matchpairs = 1
 map <C-n> :NERDTreeToggle<CR>
 "Closes vim if only NERDTree is left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
 
 "folding
 set foldmethod=syntax   
