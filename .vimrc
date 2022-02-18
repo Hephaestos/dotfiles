@@ -44,7 +44,7 @@ set showtabline=2
 "Pro gamer line numbers
 "set relativenumber
 set number
-"set cursorline
+set cursorline
 
 "Fuzzy file search
 set path+=**
@@ -56,7 +56,7 @@ command! MakeTags !ctags -R .
 "vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'sheerun/vim-polyglot'		                                "Syntax Highlighting
+"Plug 'sheerun/vim-polyglot'		                            "Syntax Highlighting
 Plug 'scrooloose/syntastic'		                                "Syntax Checker
 Plug 'Raimondi/delimitMate'		                                "Autoclose and indent
 Plug 'vim-airline/vim-airline'                                  "Light as air statusline
