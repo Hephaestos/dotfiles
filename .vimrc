@@ -82,7 +82,7 @@ let ayucolor="mirage"
 try
     colorscheme ayu
 catch /^Vim\%((\a\+)\)\=:E185/
-        " that's ok
+    colorscheme solarized
 endtry
 
 " powerline symbols
