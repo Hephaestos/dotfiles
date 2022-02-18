@@ -26,4 +26,4 @@ ln -s .dotfiles/.p10k.zsh .p10k.zsh
 vim -c "PlugInstall | q | q"
 
 # Install oh-my-zsh and launch zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --keep-zshrc
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
