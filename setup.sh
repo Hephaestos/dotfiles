@@ -1,3 +1,5 @@
+cd $HOME
+git clone https://github.com/hephaestos/dotfiles
 mv dotfiles .dotfiles
 sudo apt install zsh vim tmux
 ln -s .dotfiles/.vimrc .vimrc
