@@ -130,6 +130,7 @@ export KEYTIMEOUT=1
 #Other Aliases
 alias hydra="ssh mfloyd12@hydra7.eecs.utk.edu"
 alias darklunch="ssh -i .ssh/digital_ocean.key daniel@darklunch.me"
+alias cl="clang -g -Wall"
 
 #add ~/bin to path
 export PATH=$PATH:$HOME/bin
