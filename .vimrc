@@ -1,5 +1,4 @@
-syntax on
-
+syntax on 
 set t_kb=
 set nocompatible
 set backspace=eol,indent,start
@@ -80,7 +79,11 @@ call plug#end()
 
 set termguicolors
 let ayucolor="mirage"
-colorscheme ayu
+try
+    colorscheme ayu
+catch /^Vim\%((\a\+)\)\=:E185/
+        " that's ok
+endtry
 
 " powerline symbols
 let g:airline_left_sep = ''
