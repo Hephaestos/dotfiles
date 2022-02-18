@@ -144,4 +144,7 @@ else
     p10k configure
 fi
 
+# Dumb startup things that I should find a better way to handle
 cd ~
+vi -c "q"
+clear
