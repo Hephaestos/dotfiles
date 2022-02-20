@@ -55,7 +55,7 @@ command! MakeTags !ctags -R .
 "vim-plug
 call plug#begin('~/.vim/plugged')
 
-"Plug 'sheerun/vim-polyglot'		                            "Syntax Highlighting
+Plug 'sheerun/vim-polyglot', { 'commit': '2c5af8f' }            "Syntax Highlighting
 Plug 'scrooloose/syntastic'		                                "Syntax Checker
 Plug 'Raimondi/delimitMate'		                                "Autoclose and indent
 Plug 'vim-airline/vim-airline'                                  "Light as air statusline
