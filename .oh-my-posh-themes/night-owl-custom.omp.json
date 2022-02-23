@@ -17,6 +17,17 @@
           "type": "os"
         },
         {
+          "type": "session",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#c386f1",
+          "leading_diamond": "<transparent,#c386f1>\ue0b0</>",
+          "trailing_diamond": "\ue0b0",
+          "properties": {
+            "template": "{{ if .SSHSession }} \uF817 {{ end }}"
+          }
+        },
+        {
           "background": "#ef5350",
           "foreground": "#ffeb95",
           "leading_diamond": "<transparent,#ef5350>\ue0b0</>",
@@ -106,17 +117,6 @@
           "style": "diamond",
           "trailing_diamond": "<transparent,#303030>\ue0b2</>",
           "type": "node"
-        },
-        {
-          "background": "#306998",
-          "foreground": "#FFE873",
-          "leading_diamond": "\ue0b2",
-          "properties": {
-            "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
-          },
-          "style": "diamond",
-          "trailing_diamond": "<transparent,#306998>\ue0b2</>",
-          "type": "python"
         },
         {
           "background": "#ffffff",
