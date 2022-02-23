@@ -1,6 +1,13 @@
 # Install Powerlevel10k if it is not installed
-if [ ! -f ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k ]; then
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+if [ ! -d ${ZSH_CUSTOM}/themes/powerlevel10k ]; then
+    echo "##### Installing Powerlevel10k #####"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
+fi
+
+# Install zsh-syntax-highlighting if it is not installed
+if [ ! -d ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting ]; then
+  echo "##### Installing zsh-syntax-highlighting #####"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -81,7 +88,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ubuntu zsh-syntax-highlighting tmux)
+plugins=(git ubuntu tmux zsh-syntax-highlighting)
 autoload -U compinit && compinit
 
 ZSH_TMUX_AUTOSTART=true
@@ -150,6 +157,4 @@ else
 fi
 
 # Dumb startup things that I should find a better way to handle
-cd ~
 vi -c "q"
-clear
