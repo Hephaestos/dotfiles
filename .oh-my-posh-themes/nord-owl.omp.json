@@ -1,12 +1,30 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+		"fg": "#E5E9F0",
+		"bg": "#2E3440",
+		"cyan": "#88C0D0",
+		"yellow": "#EBCB8B",
+		"blue": "#5E81AC",
+		"dark-blue": "#274364",
+		"lime": "#A3BE8C",
+		"green": "#A3BE8C",
+		"seafoam": "#8FBCBB",
+		"red": "#BF616A",
+		"orange": "#D08770",
+		"gray": "#2E3440",
+		"light-gray": "#D8DEE9",
+		"purple": "#B48EAD",
+		"black": "#000080",
+		"white": "#FFFFFFF"
+  },
   "blocks": [
     {
       "alignment": "left",
       "segments": [
         {
-          "background": "#21c7a8",
-          "foreground": "#011627",
+          "background": "p:orange",
+          "foreground": "p:gray",
           "leading_diamond": "\u256d\u2500\ue0b6",
           "properties": {
             "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} {{ .HostName }} ",
@@ -19,18 +37,18 @@
         {
           "type": "session",
           "style": "diamond",
-          "foreground": "#ffffff",
-          "background": "#c386f1",
-          "leading_diamond": "<transparent,#c386f1>\ue0b0</>",
+          "foreground": "p:gray",
+          "background": "p:purple",
+          "leading_diamond": "<transparent,background>\ue0b0</>",
           "trailing_diamond": "\ue0b0",
           "properties": {
             "template": "{{ if .SSHSession }} \uF817 {{ end }}"
           }
         },
         {
-          "background": "#ef5350",
-          "foreground": "#ffeb95",
-          "leading_diamond": "<transparent,#ef5350>\ue0b0</>",
+          "background": "p:red",
+          "foreground": "p:yellow",
+          "leading_diamond": "<transparent,background>\ue0b0</>",
           "properties": {
             "template": " \uf292 "
           },
@@ -39,12 +57,12 @@
           "type": "root"
         },
         {
-          "background": "#82AAFF",
-          "foreground": "#011627",
-          "leading_diamond": "<transparent,#82AAFF>\ue0b0</>",
+          "background": "p:blue",
+          "foreground": "p:gray",
+          "leading_diamond": "<transparent,background>\ue0b0</>",
           "properties": {
             "folder_icon": "\uf07c ",
-            "folder_separator_icon": " <#011627>\ue0b1</> ",
+            "folder_separator_icon": " <p:gray>\ue0b1</> ",
             "home_icon": "\uf7db ",
             "style": "mixed",
             "template": " {{ .Path }} "
@@ -54,14 +72,14 @@
           "type": "path"
         },
         {
-          "background": "#22da6e",
+          "background": "p:green",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#addb67{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f78c6c{{ end }}",
-            "{{ if gt .Ahead 0 }}#21c7a8{{ end }}",
-            "{{ if gt .Behind 0 }}#c792ea{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}",
+            "{{ if gt .Ahead 0 }}p:seafoam{{ end }}",
+            "{{ if gt .Behind 0 }}p:purple{{ end }}"
           ],
-          "foreground": "#011627",
+          "foreground": "p:gray",
           "powerline_symbol": "\ue0b0",
           "properties": {
             "branch_icon": "\ue725 ",
@@ -75,9 +93,9 @@
           "type": "git"
         },
         {
-          "background": "#575656",
-          "foreground": "#d6deeb",
-          "leading_diamond": "<transparent,#575656>\ue0b0</>",
+          "background": "p:light-gray",
+          "foreground": "p:fg",
+          "leading_diamond": "<transparent,p:light-gray>\ue0b0</>",
           "properties": {
             "style": "roundrock",
             "template": " {{ .FormattedMs }} ",
@@ -94,14 +112,14 @@
       "alignment": "right",
       "segments": [
         {
-          "background": "#8f43f3",
-          "foreground": "#ffffff",
+          "background": "p:purple",
+          "foreground": "p:gray",
           "leading_diamond": "\ue0b6",
           "properties": {
             "template": " \uf85a {{ round .PhysicalPercentUsed .Precision }}% "
           },
           "style": "diamond",
-          "trailing_diamond": "<transparent,#8f43f3>\ue0b2</>",
+          "trailing_diamond": "<transparent,background>\ue0b2</>",
           "type": "sysinfo"
         },
         {
@@ -251,8 +269,8 @@
           "type": "kubectl"
         },
 	{
-	  "background": "#FF0000",
-	  "foreground": "#ffffff",
+	  "background": "p:red",
+	  "foreground": "p:gray",
           "leading_diamond": "\ue0b2",
 	  "properties": {
 	    "playing_icon": "\uE602 ",
@@ -260,12 +278,25 @@
 	    "stopped_icon": "\uF04D "
   	  },
           "style": "diamond",
-          "trailing_diamond": "<transparent,#ff0000>\ue0b2</>",
+          "trailing_diamond": "<transparent,background>\ue0b2</>",
 	  "type": "ytm"
 	},
         {
-          "background": "#234d70",
-          "foreground": "#d6deeb",
+          "background": "p:green",
+          "foreground": "p:gray",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "playing_icon": "\uf1bc ",
+            "template": " {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} ",
+            "track_separator": " ~ "
+          },
+          "style": "diamond",
+          "trailing_diamond": "<transparent,background>\ue0b2</>",
+          "type": "spotify"
+        },
+        {
+          "background": "p:dark-blue",
+          "foreground": "p:fg",
           "leading_diamond": "\ue0b2",
           "properties": {
             "template": " \uf64f {{ .CurrentDate | date .Format }} ",
@@ -283,7 +314,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#21c7a8",
+          "foreground": "p:orange",
           "properties": {
             "template": "\u2570\u2500"
           },
@@ -291,22 +322,9 @@
           "type": "text"
         },
         {
-          "background": "#1DB954",
-          "foreground": "#011627",
-          "leading_diamond": "\ue0b6",
-          "properties": {
-            "playing_icon": "\uf1bc ",
-            "template": " {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} ",
-            "track_separator": " ~ "
-          },
-          "style": "diamond",
-          "trailing_diamond": "\ue0c6 ",
-          "type": "spotify"
-        },
-        {
-          "foreground": "#22da6e",
+          "foreground": "p:green",
           "foreground_templates": [
-            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+            "{{ if gt .Code 0 }}p:red{{ end }}"
           ],
           "properties": {
             "always_enabled": true,
